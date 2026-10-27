@@ -1,0 +1,48 @@
+项目名称：日历日程助手rag+agent部分
+项目来源：日历日程助手rag+agent部分
+项目日期：2026-10-21
+项目痛点：已完成了前后端基本功能点的实现，需要完成rag+agent部分
+解决方法：使用deepseek协助修改代码
+遇到的问题：一、 前端（Vue 3 + Element Plus）
+1. Vue 3 响应式丢失（界面卡在“思考中”不刷新）
+困难：流式输出时，数据明明已经赋值到了数组里，但页面死活不更新。
+原因：直接修改数组内对象属性（obj.content += chunk）打破了 Vue 的响应式追踪。
+解决：使用 splice 或深拷贝替换整个数组项，强制触发 Vue 的视图更新。
+2. SSE 流式输出被截断/解析失败
+困难：网络不稳定或数据包过大时，浏览器收到的 JSON 格式是残缺的，导致前端报错 undefined。
+解决：后端在流开头发送 : connected 心跳保活，并在前端流式解析中加入 try-catch 保护，防止半截 JSON 导致整个页面崩溃。
+3. 页面跳转后数据不刷新
+困难：AI 执行完操作后，前端用 router.push() 跳转到了日历/日程页，但因为路由已经在目标页，Vue 缓存了组件，列表还是旧的。
+解决：跳转时在 URL 携带时间戳参数 query: { t: Date.now() }，并在目标页监听该参数，一旦变化立刻重新发起 API 请求拉取最新数据。
+二、 后端（FastAPI + MySQL + SQLite）
+1. Python 字段名冲突（TypeError）
+困难：Pydantic 定义模型时，字段名 date: date | None 导致类型解析报错。
+解决：使用别名导入，将 datetime 库的 date 重命名为 dt_date，规避了变量名和类型名的冲突。
+2. ORM 与原生 SQL 混用导致的数据缺失
+困难：改用原生 pymysql 后，插入数据报错 Field 'created_at' doesn't have a default value。
+解决：因为原生 SQL 不会像 ORM 那样自动填时间，所以在代码里手动用 datetime.now() 格式化时间，并写进 INSERT 语句中。
+3. 文件与数据库的同步
+困难：日报既要存数据库，又要存本地 .txt 文件，还要支持修改和删除同步。
+解决：在 FastAPI 的 CRUD 接口中，封装 save_report_file 和 delete_report_file 方法，在数据库 commit 的前后同步操作文件系统。
+三、 RAG + Agent 核心（LangChain / LangGraph）
+1. 环境与模型配置报错
+困难：换了新环境后报 404 Model not exist，以及依赖库版本冲突报 escape_dict 错误。
+解决：发现 qwen3-max 权限不通，降级改用 qwen-max；并且锁定 langchain 生态版本，解决了社区包更新的兼容性问题。
+2. 大模型的“失忆症”（上下文丢失）
+困难：刷新页面或重启后端后，AI 忘记了刚才聊了什么，导致回复“确认”时它不知道要确认什么。
+解决：引入 LangGraph 的 MemorySaver，并将聊天记录持久化到本地的 SqliteSaver。通过传递唯一的 session_id（如 2026-10-21），让 AI 拥有了跨会话的长期记忆。
+3. HTTP 自调用死锁（性能灾难）
+困难：Agent 工具内部用 requests 去请求同主机的 FastAPI 接口，导致 FastAPI 线程池被互相等待占满而死锁。
+解决：弃用 HTTP 请求，在工具函数中直接用 pymysql 同步直连 MySQL 数据库，将耗时从几秒缩短到几毫秒，彻底消灭死锁。
+4. Agent 格式崩溃（HTTP 400 报错）
+困难：工具执行报错（如数据库报错）后，打断了 Tool Call 的闭环，导致下一轮对话大模型报 tool_calls must be followed by tool messages。
+解决：在所有工具函数内加入 try-catch 防御机制，即使数据库抛异常，也将其包装成纯文本字符串返回给大模型，保证大模型的上下文格式永远合法。
+5. 大模型的“自作主张”（Human-in-the-loop）
+困难：Prompt 明确写了“必须让用户确认”，但大模型还是会自作主张直接执行增删改。
+解决：通过后端中间件（Middleware）进行硬拦截。检测到是大模型发起的 write_tools 操作时，检查最后一次用户输入是否包含“确认”等词汇；如果没有，强行中断执行，并返回系统警告。
+6. AI 没有“时间概念”
+困难：AI 擅自编造今天的日期，导致“明天下午两点”建错了日期。
+解决：增加 get_current_date 系统工具，并在 Prompt 中设立红线：“处理任何相对时间前，必须先调工具获取基准时间”。
+明日计划：1、修改简历；
+2、梳理该项目的前后端代码
+---

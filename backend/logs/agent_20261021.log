@@ -1,0 +1,347 @@
+2026-10-21 17:33:06,390 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 17:33:06,390 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|总结一下我的日报
+2026-10-21 17:33:09,616 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_reports
+2026-10-21 17:33:09,629 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 17:33:09,645 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_reports调用成功
+2026-10-21 17:33:09,652 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-21 17:33:09,654 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"date": "2026-09-19", "id": 3, "solution": "使用deepseek生成一份简单的python代码文件，将.md文件中的内容识别读取，并转换为word格式便于修改，转换为pdf格式便于打印为纸质版。", "tomorrow": "1、了解常见的数据处理的方式，大模型中数据处理需要做什么，将python作为主要编程语言时，工程中需要掌握哪些部分。\n2、将需要背诵的文档整理出来交给zsz打印。\n3、制作一个知识读取，帮助用户快速理解掌握知识的辅助学习agent，主要功能是设置需要学习巩固的文档，agent进行读取，并且科学设置考题，帮助用户加深记忆，并存储对话，后续出题要兼顾新知识和旧知识，同时出题以检测用户的掌握情况，进行判断，并逐步改进考题设置。后续加入对用户对不同知识模块的掌握情况进行进度提示与打分，同时显示学习建议，比如对哪部分知识的了解薄弱应该对应相应练习策略。ai生成每日总结文档，存储在文件夹中，每周日进行周总结，月末进行月总结。（demo，20日）", "source": "github上下载的agent与rag知识点与学习路线。", "pain": "文档是.md格式，知识脉络清晰，突出重点，适合背诵，但纸质版更适合背诵，.md格式不方便打印为纸质版。", "name": ".md文件批量转换word与pdf格式", "problem": "1、建立虚拟环境时默认建立C盘，占C盘空间，于是重新在文件根目录下建立虚拟环境。\n2、出现文档中字体不好看，段落不清晰，排版混乱等问题，word文档中出现图片比例过大显示不全，pdf文档中出现.md文档中的段落在pdf文档中，段落显示不全，之前一段的内容，在pdf中只显示一行，并且左侧有留白，但右侧没有。针对这个问题，首先查找原因，原来的代码是将.md文档转换为htm格式，再通过html格式分别转化为word与pdf格式。但由于pdf对于html的识别转化能力较差，我的思路是先将.md文档转为word格式，规定好word格式中对字体字号颜色、段落、页边距、页面大小、取消所有超链接，规定图片纵向与横向的最大长度，规定严格的word文档格式，再根据word的格式转化为pdf格式，效果明显。\n3、出现了部分.md文档解析失败的情况，约3篇。解析失败原因是 Markdown 文件 README.md 里，包含了一张网络图片，且图片的 URL 链接里带有中文字符，代码中urllib.request.urlopen(url)这个函数默认只支持 ASCII 字符，遇到中文就会直接崩溃。通过对源代码重点的md文档转html函数做出增强，能自动对图片 URL 中的中文进行编码。\n4、由于大部分md文档都顺利转换，不想继续改动代码，就额外建立Py文件对单个文档进行转换。", "created_at": "2026-10-16T18:09:52"}]
+2026-10-21 17:34:42,290 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 17:34:42,290 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|非常好，我现在想要添加一个日程，时间是今天，晚上八点钟到十点钟，两个小时，内容是“完善日历日程助手”
+2026-10-21 17:34:45,744 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 17:34:45,744 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '完善日历日程助手', 'date': '2023-11-28', 'start_time': '20:00', 'end_time': '22:00'}
+2026-10-21 17:34:45,778 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_schedule调用成功
+2026-10-21 17:34:45,778 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-21 17:34:45,778 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] 成功创建日程。
+2026-10-21 17:44:29,818 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 17:44:29,818 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|帮我建一个今晚 8 点到 10 点，内容叫‘完善助手’的日程。
+2026-10-21 17:45:03,094 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 17:45:03,094 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|日期为2026年10月21日
+2026-10-21 17:45:48,232 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 17:45:48,232 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|帮我建一个日期为2026年10月21日 8 点到 10 点，内容叫‘完善助手’的日程。
+2026-10-21 17:46:02,002 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 17:46:02,002 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 19:55:41,014 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 19:55:41,021 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|添加一个今天晚上八点到十点的日程，今天是2026年10月21日，内容是“完善日历日程助手”
+2026-10-21 19:55:54,674 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-21 19:55:54,674 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 19:55:57,211 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 19:55:57,211 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '完善日历日程助手', 'date': '2026-10-21', 'start_time': '20:00', 'end_time': '22:00'}
+2026-10-21 19:55:57,228 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_schedule调用成功
+2026-10-21 19:55:57,243 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有5条消息
+2026-10-21 19:55:57,243 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具：create_schedule]成功创建日程。
+2026-10-21 19:57:11,522 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有7条消息
+2026-10-21 19:57:11,522 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|添加一个明天下午一点半到六点的日程，今天是2026年10月22日，内容是“详解日历助手代码”
+2026-10-21 19:57:16,593 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 19:57:16,595 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '详解日历助手代码', 'date': '2026-10-23', 'start_time': '13:30', 'end_time': '18:00'}
+2026-10-21 19:57:16,616 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_schedule调用成功
+2026-10-21 19:57:16,618 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有9条消息
+2026-10-21 19:57:16,618 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具：create_schedule]成功创建日程。
+2026-10-21 19:58:07,563 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有11条消息
+2026-10-21 19:58:07,563 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|帮我删除今晚的日程
+2026-10-21 19:58:12,189 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_schedules
+2026-10-21 19:58:12,189 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 19:58:12,204 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_schedules调用成功
+2026-10-21 19:58:12,209 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有13条消息
+2026-10-21 19:58:12,209 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"start_time": "20:00:00", "week_plan_id": null, "title": "完善日历日程助手", "color": "blue", "created_at": "2026-10-21T17:34:46", "date": "2023-11-28", "id": 3, "end_time": "22:00:00", "repeat_type": "none"}, {"start_time": "14:00:00", "week_plan_id": null, "title": "日程1", "color": "red", "created_at": "2026-10-16T16:20:58", "date": "2026-10-16", "id": 2, "end_time": "17:00:00", "repeat_type": "none"}, {"start_time": "20:00:00", "week_plan_id": null, "title": "完善日历日程助手", "color": "blue", "created_at": "2026-10-21T19:55:57", "date": "2026-10-21", "id": 4, "end_time": "22:00:00", "repeat_type": "none"}, {"start_time": "13:30:00", "week_plan_id": null, "title": "详解日历助手代码", "color": "blue", "created_at": "2026-10-21T19:57:17", "date": "2026-10-23", "id": 5, "end_time": "18:00:00", "repeat_type": "none"}, {"start_time": "14:00:00", "week_plan_id": 1, "title": "和团队开会", "color": "blue", "created_at": "2026-10-16T15:21:40", "date": "2026-11-03", "id": 1, "end_time": "15:00:00", "repeat_type": "none"}]
+2026-10-21 19:58:27,743 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有15条消息
+2026-10-21 19:58:27,743 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|是的
+2026-10-21 19:58:28,998 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：delete_schedule
+2026-10-21 19:58:28,998 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'schedule_id': 3}
+2026-10-21 19:58:29,035 - agent - INFO- middleware.py:29 - [monitor_tool]工具delete_schedule调用成功
+2026-10-21 19:58:29,037 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有17条消息
+2026-10-21 19:58:29,037 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具：delete_schedule]成功删除日程。
+2026-10-21 20:00:20,412 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有19条消息
+2026-10-21 20:00:20,412 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|请查看我今晚有什么日程吗
+2026-10-21 20:00:24,120 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_schedules
+2026-10-21 20:00:24,123 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 20:00:24,134 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_schedules调用成功
+2026-10-21 20:00:24,134 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有21条消息
+2026-10-21 20:00:24,134 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"start_time": "14:00:00", "week_plan_id": null, "title": "日程1", "color": "red", "created_at": "2026-10-16T16:20:58", "date": "2026-10-16", "id": 2, "end_time": "17:00:00", "repeat_type": "none"}, {"start_time": "20:00:00", "week_plan_id": null, "title": "完善日历日程助手", "color": "blue", "created_at": "2026-10-21T19:55:57", "date": "2026-10-21", "id": 4, "end_time": "22:00:00", "repeat_type": "none"}, {"start_time": "13:30:00", "week_plan_id": null, "title": "详解日历助手代码", "color": "blue", "created_at": "2026-10-21T19:57:17", "date": "2026-10-23", "id": 5, "end_time": "18:00:00", "repeat_type": "none"}, {"start_time": "14:00:00", "week_plan_id": 1, "title": "和团队开会", "color": "blue", "created_at": "2026-10-16T15:21:40", "date": "2026-11-03", "id": 1, "end_time": "15:00:00", "repeat_type": "none"}]
+2026-10-21 20:04:05,155 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有23条消息
+2026-10-21 20:04:05,155 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|不对，今天是21日，我想让你删除21日的日程
+2026-10-21 20:04:48,454 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有25条消息
+2026-10-21 20:04:48,454 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:04:49,519 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：delete_schedule
+2026-10-21 20:04:49,519 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'schedule_id': 4}
+2026-10-21 20:04:49,541 - agent - INFO- middleware.py:29 - [monitor_tool]工具delete_schedule调用成功
+2026-10-21 20:04:49,543 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有27条消息
+2026-10-21 20:04:49,543 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具：delete_schedule]成功删除日程。
+2026-10-21 20:06:06,707 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有29条消息
+2026-10-21 20:06:06,707 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|好的，我想要修改23日的日程，修改内容为“详解日历日程助手代码”
+2026-10-21 20:06:19,078 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有31条消息
+2026-10-21 20:06:19,078 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:06:20,254 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：update_schedule
+2026-10-21 20:06:20,254 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'schedule_id': 5, 'title': '详解日历日程助手代码'}
+2026-10-21 20:06:20,286 - agent - INFO- middleware.py:29 - [monitor_tool]工具update_schedule调用成功
+2026-10-21 20:06:20,293 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有33条消息
+2026-10-21 20:06:20,296 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具：update_schedule]成功修改日程。
+2026-10-21 20:07:40,285 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有35条消息
+2026-10-21 20:07:40,285 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|非常好，我想要添加月计划，从今天到29日，内容为“完成rag+agent代码梳理”
+2026-10-21 20:07:58,601 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有37条消息
+2026-10-21 20:07:58,601 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:08:00,072 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_month_plan
+2026-10-21 20:08:00,072 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '完成rag+agent代码梳理', 'deadline': '2026-10-29'}
+2026-10-21 20:08:00,103 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_month_plan调用成功
+2026-10-21 20:08:00,103 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有39条消息
+2026-10-21 20:08:00,103 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具：create_month_plan]成功创建月计划。
+2026-10-21 20:10:31,432 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有41条消息
+2026-10-21 20:10:31,432 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|非常好，我想要修改“月计划1”改为“日历日程助手前后端基本框架”
+2026-10-21 20:10:34,359 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_month_plans
+2026-10-21 20:10:34,359 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 20:10:34,374 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_month_plans调用成功
+2026-10-21 20:10:34,376 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有43条消息
+2026-10-21 20:10:34,378 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 2, "created_at": "2026-10-16T16:04:03", "title": "月计划1", "deadline": "2026-10-16"}, {"id": 3, "created_at": "2026-10-21T20:08:00", "title": "完成rag+agent代码梳理", "deadline": "2026-10-29"}]
+2026-10-21 20:10:43,884 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有45条消息
+2026-10-21 20:10:43,884 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:10:45,513 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：update_month_plan
+2026-10-21 20:10:45,527 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'plan_id': 2, 'title': '日历日程助手前后端基本框架'}
+2026-10-21 20:10:45,544 - agent - INFO- middleware.py:29 - [monitor_tool]工具update_month_plan调用成功
+2026-10-21 20:10:45,550 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有47条消息
+2026-10-21 20:10:45,551 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具：update_month_plan]成功修改月计划。
+2026-10-21 20:11:38,753 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有49条消息
+2026-10-21 20:11:38,759 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|好的，我想要删除截止日期为10月20日前的月计划
+2026-10-21 20:11:42,489 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_month_plans
+2026-10-21 20:11:42,490 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 20:11:42,504 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_month_plans调用成功
+2026-10-21 20:11:42,506 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有51条消息
+2026-10-21 20:11:42,506 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 2, "created_at": "2026-10-16T16:04:03", "title": "日历日程助手前后端基本框架", "deadline": "2026-10-16"}, {"id": 3, "created_at": "2026-10-21T20:08:00", "title": "完成rag+agent代码梳理", "deadline": "2026-10-29"}]
+2026-10-21 20:11:49,745 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有53条消息
+2026-10-21 20:11:49,745 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:11:50,713 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：delete_month_plan
+2026-10-21 20:11:50,713 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'plan_id': 2}
+2026-10-21 20:11:50,743 - agent - INFO- middleware.py:29 - [monitor_tool]工具delete_month_plan调用成功
+2026-10-21 20:11:50,744 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有55条消息
+2026-10-21 20:11:50,744 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具：delete_month_plan]成功删除月计划。
+2026-10-21 20:14:14,500 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有57条消息
+2026-10-21 20:14:14,500 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要新建周计划，日期为今天到25日，所属月计划为当前唯一的月计划，周计划名称为“完成前后端代码梳理”
+2026-10-21 20:14:19,112 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_month_plans
+2026-10-21 20:14:19,121 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 20:14:19,131 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_month_plans调用成功
+2026-10-21 20:14:19,131 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有59条消息
+2026-10-21 20:14:19,138 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 3, "created_at": "2026-10-21T20:08:00", "title": "完成rag+agent代码梳理", "deadline": "2026-10-29"}]
+2026-10-21 20:14:35,593 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有61条消息
+2026-10-21 20:14:35,593 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:14:37,718 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_week_plan
+2026-10-21 20:14:37,718 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '完成前后端代码梳理', 'month_plan_id': 3, 'start_date': '2026-10-21', 'deadline': '2026-10-25'}
+2026-10-21 20:14:37,749 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_week_plan调用成功
+2026-10-21 20:14:37,749 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有63条消息
+2026-10-21 20:14:37,749 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具：create_week_plan]成功创建周计划。
+2026-10-21 20:15:03,714 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有65条消息
+2026-10-21 20:15:03,714 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|非常好，我想要删除“周计划1”
+2026-10-21 20:15:05,986 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 20:15:05,993 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 20:15:06,009 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_week_plans调用成功
+2026-10-21 20:15:06,009 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有67条消息
+2026-10-21 20:15:06,017 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"month_plan_id": null, "title": "周计划1", "deadline": "2026-10-16", "id": 2, "start_date": "2026-10-08", "created_at": "2026-10-16T16:04:28"}, {"month_plan_id": 3, "title": "完成前后端代码梳理", "deadline": "2026-10-25", "id": 3, "start_date": "2026-10-21", "created_at": "2026-10-21T20:14:38"}, {"month_plan_id": null, "title": "完成前端对接（修改版）", "deadline": "2026-11-07", "id": 1, "start_date": "2026-11-01", "created_at": "2026-10-16T15:20:06"}]
+2026-10-21 20:15:12,659 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有69条消息
+2026-10-21 20:15:12,659 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:15:16,507 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：delete_week_plan
+2026-10-21 20:15:16,507 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'plan_id': 2}
+2026-10-21 20:15:16,523 - agent - INFO- middleware.py:29 - [monitor_tool]工具delete_week_plan调用成功
+2026-10-21 20:15:16,523 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有71条消息
+2026-10-21 20:15:16,523 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具：delete_week_plan]成功删除周计划。
+2026-10-21 20:16:16,744 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有73条消息
+2026-10-21 20:16:16,744 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要修改周计划“完成前后端代码梳理”，修改名称，修改为“完成rag+agent部分代码梳理”
+2026-10-21 20:16:32,451 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有75条消息
+2026-10-21 20:16:32,451 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|确认
+2026-10-21 20:16:35,250 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：update_week_plan
+2026-10-21 20:16:35,250 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'plan_id': 3, 'title': '完成rag+agent部分代码梳理'}
+2026-10-21 20:16:35,276 - agent - INFO- middleware.py:29 - [monitor_tool]工具update_week_plan调用成功
+2026-10-21 20:16:35,276 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有77条消息
+2026-10-21 20:16:35,281 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具：update_week_plan]成功修改周计划。
+2026-10-21 21:52:43,587 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 21:52:43,588 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|请问我现在一共有几个周计划？
+2026-10-21 21:52:46,943 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 21:52:46,949 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 21:52:46,961 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_week_plans调用成功
+2026-10-21 21:52:46,963 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-21 21:52:46,964 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"start_date": "2026-10-21", "id": 3, "created_at": "2026-10-21T20:14:38", "month_plan_id": 3, "title": "完成rag+agent部分代码梳理", "deadline": "2026-10-25"}, {"start_date": "2026-11-01", "id": 1, "created_at": "2026-10-16T15:20:06", "month_plan_id": null, "title": "完成前端对接（修改版）", "deadline": "2026-11-07"}]
+2026-10-21 21:56:00,928 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有5条消息
+2026-10-21 21:56:00,928 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|请问我现在一共有几个周计划？
+2026-10-21 21:56:03,461 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 21:56:03,467 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 21:56:03,478 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_week_plans调用成功
+2026-10-21 21:56:03,480 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有7条消息
+2026-10-21 21:56:03,480 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"start_date": "2026-10-21", "id": 3, "created_at": "2026-10-21T20:14:38", "month_plan_id": 3, "title": "完成rag+agent部分代码梳理", "deadline": "2026-10-25"}, {"start_date": "2026-11-01", "id": 1, "created_at": "2026-10-16T15:20:06", "month_plan_id": null, "title": "完成前端对接（修改版）", "deadline": "2026-11-07"}]
+2026-10-21 22:10:05,291 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有9条消息
+2026-10-21 22:10:05,292 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|请帮我查询所有的周计划
+2026-10-21 22:10:09,067 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 22:10:09,068 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 22:10:09,148 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_week_plans调用成功
+2026-10-21 22:10:09,151 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有11条消息
+2026-10-21 22:10:09,152 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 3, "title": "完成rag+agent部分代码梳理", "month_plan_id": 3, "start_date": "2026-10-21", "deadline": "2026-10-25"}, {"id": 1, "title": "完成前端对接（修改版）", "month_plan_id": null, "start_date": "2026-11-01", "deadline": "2026-11-07"}]
+2026-10-21 22:17:05,500 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有13条消息
+2026-10-21 22:17:05,500 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|请帮我列出所有的周计划
+2026-10-21 22:17:08,424 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 22:17:08,425 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 22:17:08,494 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_week_plans调用成功
+2026-10-21 22:17:08,498 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有15条消息
+2026-10-21 22:17:08,500 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 3, "title": "完成rag+agent部分代码梳理", "month_plan_id": 3, "start_date": "2026-10-21", "deadline": "2026-10-25"}, {"id": 1, "title": "完成前端对接（修改版）", "month_plan_id": null, "start_date": "2026-11-01", "deadline": "2026-11-07"}]
+2026-10-21 22:38:11,779 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 22:38:11,779 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|帮我列出所有的周计划
+2026-10-21 22:38:13,910 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 22:38:13,911 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 22:38:13,981 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_week_plans调用成功
+2026-10-21 22:38:13,985 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-21 22:38:13,985 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|现有的周计划如下：
+- [ID:3] 完成rag+agent部分代码梳理 (截止日期: 2026-10-25)
+- [ID:1] 完成前端对接（修改版） (截止日期: 2026-11-07)
+2026-10-21 22:38:55,727 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有5条消息
+2026-10-21 22:38:55,727 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|你知道今天是几年几月几日吗
+2026-10-21 22:38:58,435 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_schedules
+2026-10-21 22:38:58,436 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 22:38:58,503 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_schedules调用成功
+2026-10-21 22:38:58,507 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有7条消息
+2026-10-21 22:38:58,509 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 2, "title": "日程1", "date": "2026-10-16", "start_time": "14:00:00", "end_time": "17:00:00", "week_plan_id": null, "color": "red"}, {"id": 5, "title": "详解日历日程助手代码", "date": "2026-10-23", "start_time": "13:30:00", "end_time": "18:00:00", "week_plan_id": null, "color": "blue"}, {"id": 1, "title": "和团队开会", "date": "2026-11-03", "start_time": "14:00:00", "end_time": "15:00:00", "week_plan_id": 1, "color": "blue"}]
+2026-10-21 22:50:43,427 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有9条消息
+2026-10-21 22:50:43,427 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|今天是几年几月几日
+2026-10-21 22:50:47,176 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_current_date
+2026-10-21 22:50:47,178 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 22:50:47,181 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_current_date调用成功
+2026-10-21 22:50:47,183 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有11条消息
+2026-10-21 22:50:47,184 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|2026-10-21 22:50 星期三
+2026-10-21 22:53:07,195 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有13条消息
+2026-10-21 22:53:07,198 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要新建两个日程，都是明天的，一个日程是从下午一点半到五点半，内容是“梳理前端代码”，属于周计划ID为3，第二个日程是从晚上八点到十一点，内容是“梳理后端代码”，也属于周计划ID为3
+2026-10-21 22:53:16,159 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 22:53:16,161 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 22:53:16,161 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '梳理前端代码', 'date': '2026-10-22', 'start_time': '13:30', 'end_time': '17:30', 'week_plan_id': 3}
+2026-10-21 22:53:16,162 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '梳理后端代码', 'date': '2026-10-22', 'start_time': '20:00', 'end_time': '23:00', 'week_plan_id': 3}
+2026-10-21 22:53:16,282 - agent - ERROR- middleware.py:37 - 工具create_schedule调用失败，原因：(1364, "Field 'created_at' doesn't have a default value")
+2026-10-21 22:53:16,301 - agent - ERROR- middleware.py:37 - 工具create_schedule调用失败，原因：(1364, "Field 'created_at' doesn't have a default value")
+2026-10-21 22:56:51,679 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有15条消息
+2026-10-21 22:56:51,680 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要新建两个日程，都是明天的，一个日程是从下午一点半到五点半，内容是“梳理前端代码”，属于周计划ID为3，第二个日程是从晚上八点到十一点，内容是“梳理后端代码”，也属于周计划ID为3
+2026-10-21 23:01:07,615 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-21 23:01:07,615 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要新建两个日程，都是明天的，一个日程是从下午一点半到五点半，内容是“梳理前端代码”，属于周计划ID为3，第二个日程是从晚上八点到十一点，内容是“梳理后端代码”，也属于周计划ID为3
+2026-10-21 23:01:10,386 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_current_date
+2026-10-21 23:01:10,388 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 23:01:10,390 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_current_date调用成功
+2026-10-21 23:01:10,393 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-21 23:01:10,397 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|2026-10-21 23:01 星期三
+2026-10-21 23:01:23,315 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 23:01:23,316 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '梳理前端代码', 'date': '2026-10-22', 'start_time': '13:30', 'end_time': '17:30', 'week_plan_id': 3}
+2026-10-21 23:01:23,317 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 23:01:23,320 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '梳理后端代码', 'date': '2026-10-22', 'start_time': '20:00', 'end_time': '23:00', 'week_plan_id': 3}
+2026-10-21 23:01:23,447 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_schedule调用成功
+2026-10-21 23:01:23,457 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_schedule调用成功
+2026-10-21 23:01:23,461 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有6条消息
+2026-10-21 23:01:23,461 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具: create_schedule] 成功创建日程。
+2026-10-21 23:08:15,571 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有8条消息
+2026-10-21 23:08:15,572 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要修改10月23日的日程，修改名字为“梳理rag+agent部分代码”
+2026-10-21 23:08:20,215 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_schedules
+2026-10-21 23:08:20,217 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 23:08:20,293 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_schedules调用成功
+2026-10-21 23:08:20,297 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有10条消息
+2026-10-21 23:08:20,297 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 2, "title": "日程1", "date": "2026-10-16", "start_time": "14:00:00", "end_time": "17:00:00", "week_plan_id": null, "color": "red"}, {"id": 6, "title": "梳理前端代码", "date": "2026-10-22", "start_time": "13:30:00", "end_time": "17:30:00", "week_plan_id": 3, "color": "blue"}, {"id": 7, "title": "梳理后端代码", "date": "2026-10-22", "start_time": "20:00:00", "end_time": "23:00:00", "week_plan_id": 3, "color": "blue"}, {"id": 5, "title": "详解日历日程助手代码", "date": "2026-10-23", "start_time": "13:30:00", "end_time": "18:00:00", "week_plan_id": null, "color": "blue"}, {"id": 1, "title": "和团队开会", "date": "2026-11-03", "start_time": "14:00:00", "end_time": "15:00:00", "week_plan_id": 1, "color": "blue"}]
+2026-10-21 23:08:29,645 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：update_schedule
+2026-10-21 23:08:29,648 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'schedule_id': 5, 'title': '梳理rag+agent部分代码', 'date': None, 'start_time': None, 'end_time': None}
+2026-10-21 23:08:29,729 - agent - INFO- middleware.py:29 - [monitor_tool]工具update_schedule调用成功
+2026-10-21 23:08:29,734 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有12条消息
+2026-10-21 23:08:29,736 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具: update_schedule] 成功修改日程。
+2026-10-21 23:09:31,307 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有14条消息
+2026-10-21 23:09:31,308 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|非常好，我想要删除明天晚上的日程
+2026-10-21 23:09:36,630 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：get_schedules
+2026-10-21 23:09:36,632 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{}
+2026-10-21 23:09:36,736 - agent - INFO- middleware.py:29 - [monitor_tool]工具get_schedules调用成功
+2026-10-21 23:09:36,740 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有16条消息
+2026-10-21 23:09:36,744 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[{"id": 2, "title": "日程1", "date": "2026-10-16", "start_time": "14:00:00", "end_time": "17:00:00", "week_plan_id": null, "color": "red"}, {"id": 6, "title": "梳理前端代码", "date": "2026-10-22", "start_time": "13:30:00", "end_time": "17:30:00", "week_plan_id": 3, "color": "blue"}, {"id": 7, "title": "梳理后端代码", "date": "2026-10-22", "start_time": "20:00:00", "end_time": "23:00:00", "week_plan_id": 3, "color": "blue"}, {"id": 5, "title": "梳理rag+agent部分代码", "date": "2026-10-23", "start_time": "13:30:00", "end_time": "18:00:00", "week_plan_id": null, "color": "blue"}, {"id": 1, "title": "和团队开会", "date": "2026-11-03", "start_time": "14:00:00", "end_time": "15:00:00", "week_plan_id": 1, "color": "blue"}]
+2026-10-21 23:09:40,468 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：delete_schedule
+2026-10-21 23:09:40,469 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'schedule_id': 7}
+2026-10-21 23:09:40,552 - agent - INFO- middleware.py:29 - [monitor_tool]工具delete_schedule调用成功
+2026-10-21 23:09:40,556 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有18条消息
+2026-10-21 23:09:40,560 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具: delete_schedule] 成功删除日程。
+2026-10-21 23:10:28,913 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有20条消息
+2026-10-21 23:10:28,914 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|我想要添加明天晚上的日程，晚上八点到十一点，属于周计划ID为3，名称为“梳理后端代码”
+2026-10-21 23:10:33,936 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：create_schedule
+2026-10-21 23:10:33,938 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'title': '梳理后端代码', 'date': '2026-10-22', 'start_time': '20:00', 'end_time': '23:00', 'week_plan_id': 3}
+2026-10-21 23:10:34,036 - agent - INFO- middleware.py:29 - [monitor_tool]工具create_schedule调用成功
+2026-10-21 23:10:34,040 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有22条消息
+2026-10-21 23:10:34,041 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具: create_schedule] 成功创建日程。
+2026-10-21 23:17:57,142 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有24条消息
+2026-10-21 23:17:57,142 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|删除明天晚上的日程
+2026-10-21 23:18:01,136 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：get_schedules
+2026-10-21 23:18:01,219 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有26条消息
+2026-10-21 23:18:01,220 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[{"id": 2, "title": "日程1", "date": "2026-10-16", "start_time": "14:00:00", "end_time": "17:00:00", "week_plan_id": null, "color": "red"}, {"id": 6, "title": "梳理前端代码", "date": "2026-10-22", "start_time": "13:30:00", "end_time": "17:30:00", "week_plan_id": 3, "color": "blue"}, {"id": 8, "title": "梳理后端代码", "date": "2026-10-22", "start_time": "20:00:00", "end_time": "23:00:00", "week_plan_id": 3, "color": "blue"}, {"id": 5, "title": "梳理rag+agent部分代码", "date": "2026-10-23", "start_time": "13:30:00", "end_time": "18:00:00", "week_plan_id": null, "color": "blue"}, {"id": 1, "title": "和团队开会", "date": "2026-11-03", "start_time": "14:00:00", "end_time": "15:00:00", "week_plan_id": 1, "color": "blue"}]
+2026-10-21 23:18:04,582 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：delete_schedule
+2026-10-21 23:18:04,591 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有28条消息
+2026-10-21 23:18:04,592 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:18:14,978 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有30条消息
+2026-10-21 23:18:14,978 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:18:17,815 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：delete_schedule
+2026-10-21 23:18:17,884 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有32条消息
+2026-10-21 23:18:17,887 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具: delete_schedule] 成功删除日程。
+2026-10-21 23:19:53,528 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有34条消息
+2026-10-21 23:19:53,528 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|我想添加明天晚上的日程，从晚上七点半到十一点，属于周计划3，名称权为“梳理后端代码”
+2026-10-21 23:20:16,961 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有36条消息
+2026-10-21 23:20:16,961 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:20:19,197 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：create_schedule
+2026-10-21 23:20:19,298 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有38条消息
+2026-10-21 23:20:19,307 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /schedule] [调用工具: create_schedule] 成功创建日程。
+2026-10-21 23:21:19,562 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有40条消息
+2026-10-21 23:21:19,562 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|请帮我添加月计划，名称为“月计划1”，从今天到25日
+2026-10-21 23:21:23,952 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：create_month_plan
+2026-10-21 23:21:23,959 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有42条消息
+2026-10-21 23:21:23,960 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:21:33,143 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有44条消息
+2026-10-21 23:21:33,143 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:21:34,727 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：create_month_plan
+2026-10-21 23:21:34,807 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有46条消息
+2026-10-21 23:21:34,811 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具: create_month_plan] 成功创建月计划。
+2026-10-21 23:21:57,103 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有48条消息
+2026-10-21 23:21:57,103 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|帮我修改月计划1，修改直接日期到19日
+2026-10-21 23:22:00,404 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：get_month_plans
+2026-10-21 23:22:00,502 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有50条消息
+2026-10-21 23:22:00,503 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[{"id": 4, "title": "月计划1", "deadline": "2026-10-25"}, {"id": 3, "title": "完成rag+agent代码梳理", "deadline": "2026-10-29"}]
+2026-10-21 23:22:04,528 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：update_month_plan
+2026-10-21 23:22:04,532 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有52条消息
+2026-10-21 23:22:04,534 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:22:16,389 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有54条消息
+2026-10-21 23:22:16,389 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:22:17,922 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：update_month_plan
+2026-10-21 23:22:18,002 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有56条消息
+2026-10-21 23:22:18,005 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具: update_month_plan] 成功修改月计划。
+2026-10-21 23:22:53,707 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有58条消息
+2026-10-21 23:22:53,709 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|请帮我删除月计划1
+2026-10-21 23:22:57,393 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：delete_month_plan
+2026-10-21 23:22:57,397 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有60条消息
+2026-10-21 23:22:57,398 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:23:03,279 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有62条消息
+2026-10-21 23:23:03,281 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:23:04,376 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：delete_month_plan
+2026-10-21 23:23:04,464 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有64条消息
+2026-10-21 23:23:04,469 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具: delete_month_plan] 成功删除月计划。
+2026-10-21 23:37:26,309 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有66条消息
+2026-10-21 23:37:26,309 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|帮我添加一个周计划，从今天到27日，名称叫“周计划1”
+2026-10-21 23:37:30,394 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：create_week_plan
+2026-10-21 23:37:30,399 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有68条消息
+2026-10-21 23:37:30,399 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:37:39,565 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有70条消息
+2026-10-21 23:37:39,565 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:37:41,407 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：create_week_plan
+2026-10-21 23:37:41,487 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有72条消息
+2026-10-21 23:37:41,488 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具: create_week_plan] 成功创建周计划。
+2026-10-21 23:38:37,709 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有74条消息
+2026-10-21 23:38:37,709 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|帮我修改周计划1，截止时间改为24日
+2026-10-21 23:38:44,051 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：get_week_plans
+2026-10-21 23:38:44,150 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有76条消息
+2026-10-21 23:38:44,150 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|现有的周计划如下：
+- [ID:3] 完成rag+agent部分代码梳理 (截止日期: 2026-10-25)
+- [ID:4] 周计划1 (截止日期: 2026-10-27)
+- [ID:1] 完成前端对接（修改版） (截止日期: 2026-11-07)
+2026-10-21 23:38:55,962 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：update_week_plan
+2026-10-21 23:38:55,968 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有78条消息
+2026-10-21 23:38:55,972 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:39:07,934 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有80条消息
+2026-10-21 23:39:07,934 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|确认
+2026-10-21 23:39:09,523 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：update_week_plan
+2026-10-21 23:39:09,620 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有82条消息
+2026-10-21 23:39:09,624 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具: update_week_plan] 成功修改周计划。
+2026-10-21 23:39:19,293 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有84条消息
+2026-10-21 23:39:19,294 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|删除周计划1
+2026-10-21 23:39:22,211 - agent - INFO- middleware.py:43 - [monitor_tool]拦截了未经确认的写操作：delete_week_plan
+2026-10-21 23:39:22,218 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有86条消息
+2026-10-21 23:39:22,219 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|操作被系统拦截。你必须先列出表单让用户确认！请对用户说：请回复【确认】以执行操作。
+2026-10-21 23:39:45,343 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有88条消息
+2026-10-21 23:39:45,343 - agent - DEBUG- middleware.py:63 - [log_before_model]HumanMessage|是的
+2026-10-21 23:39:46,468 - agent - INFO- middleware.py:51 - [monitor_tool]执行工具：delete_week_plan
+2026-10-21 23:39:46,563 - agent - INFO- middleware.py:61 - [log_before_model]即将结束，带有90条消息
+2026-10-21 23:39:46,565 - agent - DEBUG- middleware.py:63 - [log_before_model]ToolMessage|[UI_ACTION: /calendar] [调用工具: delete_week_plan] 成功删除周计划。

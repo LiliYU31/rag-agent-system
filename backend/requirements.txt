@@ -1,0 +1,32 @@
+# ─── Web 框架 ───
+fastapi
+uvicorn[standard]
+python-multipart
+
+# ─── LangChain 生态 ───
+langchain
+langchain-core
+langchain-community
+langchain-chroma
+langchain-text-splitters
+
+# ─── LangGraph ───
+langgraph
+langgraph-checkpoint
+langgraph-prebuilt
+
+# ─── LLM ───
+openai
+dashscope
+
+# ─── 向量库 ───
+chromadb
+
+# ─── 工具 ───
+numpy
+pandas
+pypdf
+pyyaml
+requests
+python-dotenv
+tiktoken

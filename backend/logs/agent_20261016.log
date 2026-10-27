@@ -1,0 +1,7 @@
+2026-10-16 13:42:57,486 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有1条消息
+2026-10-16 13:42:57,486 - agent - DEBUG- middleware.py:48 - [log_before_model]HumanMessage|扫地机器人怎么保养
+2026-10-16 13:43:01,129 - agent - INFO- middleware.py:24 - [monitor_tool]执行工具：rag_summarize
+2026-10-16 13:43:01,141 - agent - INFO- middleware.py:25 - [monitor_tool]传入参数：{'query': '扫地机器人 保养'}
+2026-10-16 13:43:03,110 - agent - INFO- middleware.py:29 - [monitor_tool]工具rag_summarize调用成功
+2026-10-16 13:43:03,112 - agent - INFO- middleware.py:46 - [log_before_model]即将结束，带有3条消息
+2026-10-16 13:43:03,112 - agent - DEBUG- middleware.py:48 - [log_before_model]ToolMessage|扫地机器人的保养主要包括定期清理尘盒、检查并清洁刷子和滚轮，确保传感器干净无遮挡。此外，还需注意及时更换耗材如滤网等，并按照说明书指导进行电池维护。

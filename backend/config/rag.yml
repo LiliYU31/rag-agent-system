@@ -1,0 +1,3 @@
+#YAML 规定：键和值之间必须用「冒号 + 空格」分隔。
+chat_model_name: qwen3.7-max-2026-05-20
+embedding_model_name: text-embedding-v1
